@@ -92,6 +92,7 @@ public class App
         		 vI.areaTexto.append("Error al conectar con la base de datos.\n");
         		 ejecucion.append("Error al conectar con la base de datos.\n");
         		 logger.error("Error al conectar con la base de datos.", e.getCause());
+        		 iniciar(tipo);
         		 
         	}
 	}
