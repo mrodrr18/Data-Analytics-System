@@ -128,7 +128,7 @@ public class AnalizadorTermico extends Analizador {
 		tempDate = cal.getTime();
 		
 		double resultado = linear.predict((double)tempDate.getTime());
-		//**************************************************************COMPROBAR QUE ES DENTRO DE 30 MINUTOS;
+		
 		System.out.println("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.");
 		vI.areaTexto.append("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.\n");
 		ejecucion.append("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.\n");
@@ -136,7 +136,6 @@ public class AnalizadorTermico extends Analizador {
 		
 		//Como la temperatura ha sido superior a la temperatura umbral llamo al metodo que genera la alerta.
 		if(resultado > (double) this.umbral_Temperatura) {
-			// PARA TEST ********************************************return generarAlerta(resultado);
 			System.out.println("El resultado de la predicción: "+resultado+"ºC, supera el umbral "+this.umbral_Temperatura+"ºC. Se genera una alerta por correo electrónico.");
 			vI.areaTexto.append("El resultado de la predicción: "+resultado+", supera el umbral "+this.umbral_Temperatura+"ºC. Se genera una alerta por correo electrónico.\n");
 			ejecucion.append("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.\n");
@@ -163,7 +162,6 @@ public class AnalizadorTermico extends Analizador {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 		System.out.println("INICIADO EL ANALIZADOR DE INERCIA TÉRMICA");
 		vI.areaTexto.append("Iniciado el analizador de inercia térmica.\n");
@@ -192,8 +190,7 @@ public class AnalizadorTermico extends Analizador {
 				ejecucion.append("Analizador Térmico recibe notificación de nuevos datos.\n");
 				logger.info("Analizador Térmico recibe notificación de nuevos datos.");
 				//configurarUmbrales();
-
-				//***********************************PARA TEST			estado = realizarAnalisis();
+				
 				realizarAnalisis();
 				
 				try {

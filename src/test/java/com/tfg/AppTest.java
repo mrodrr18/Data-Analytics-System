@@ -1,38 +1,28 @@
 package com.tfg;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.*;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import org.junit.Before;
+import org.junit.Test;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+public class AppTest {
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	@Before
+	public void setUp() throws Exception {
+		
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+	//194
+	//*******************En las pruebas creo vector que genera alerta y otro que no. Comprueba la variable estado del hilo
+	//*********************Otra prueba de la regresion lineal, datos simulados
+	
+	//210
+	//*******************En las pruebas creo vector que genera alerta y otro que no. Comprueba la variable estado del hilo
+	//*********************Otra prueba de la regresion lineal, datos simulados
+	
 }

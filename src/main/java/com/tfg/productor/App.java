@@ -65,7 +65,6 @@ public class App
 					vI= new VentanaInicial();
 					vI.setVisible(true);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 	        	
@@ -101,8 +100,6 @@ public class App
 	    	
         	salir =false;
         	
-        	
-        	//******************************crear array de Analizador para decir que es modular el sistema
         	listaAnalizadores = new ArrayList <Analizador>();
         	
         	//Aqui instancio los hilos de proceso de cada tipo de Analizador
@@ -195,8 +192,6 @@ public class App
     	}
 						
 
-//*******************En las pruebas creo vector que genera alerta y otro que no. Comprueba la variable estado del hilo
-//*********************Otra prueba de la regresion lineal, datos simulados
     	while(!salir) {
     			
     			boolean nuevosDatos = false;
@@ -213,8 +208,6 @@ public class App
     				fechas.add((double)calendar.getTimeInMillis());
     			}
     			
-    			//*******************En las pruebas creo vector que genera alerta y otro que no. Comprueba la variable estado del hilo
-    			//*********************Otra prueba de la regresion lineal, datos simulados
     			
     			for(int i=pos; i< listaTemperatura.size(); i++) { //Comprueba ultimos pos datos de la tabla temperatura    					
     					if(!(listaTemperatura.get(i).get(0).equals(listaTemperatura2.get(contador).get(0)))) { 
@@ -265,9 +258,6 @@ public class App
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						//System.out.println("********************** "+(i+1)+" **********************");
-						//vI.areaTexto.append("********************** "+(i+1)+" **********************\n");
-						//ejecucion.append("********************** "+(i+1)+" **********************\n");
 					}else {
 						break;
 					}
@@ -344,7 +334,7 @@ public class App
         Document document = new Document(pdf);
         String line = "Medidas sensor de Temperatura\n";
         document.add(new Paragraph(line).setFontSize((float) 24.00).setMarginLeft((float)95.00));
-     // Este codigo genera una tabla de 3 columnas
+     
         Table table = new Table(2,true);
         table.addHeaderCell(new Cell().add(new Paragraph("Fecha")).setBold());
         table.addHeaderCell(new Cell().add(new Paragraph("Dato"))).setBold();

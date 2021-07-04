@@ -609,3 +609,225 @@
 04/jul/2021 11:21:52,151- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
 04/jul/2021 11:21:52,151- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
 04/jul/2021 11:21:52,153- App: Error al conectar con la base de datos.
+04/jul/2021 11:25:12,757- App: Inicio del sistema
+04/jul/2021 11:25:13,012- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+04/jul/2021 11:25:13,027- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+04/jul/2021 11:25:13,027- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+04/jul/2021 11:25:13,027- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+04/jul/2021 11:25:13,027- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+04/jul/2021 11:25:13,043- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+04/jul/2021 11:25:13,043- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+04/jul/2021 11:25:13,043- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+04/jul/2021 11:25:13,043- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+04/jul/2021 11:25:13,094- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+04/jul/2021 11:25:13,110- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+04/jul/2021 11:25:13,110- AnalizadorTermico: Nuevo analizador Térmico
+04/jul/2021 11:25:13,110- App: Añadido Analizador de temperatura a la lista de Analizadores.
+04/jul/2021 11:25:15,634- VentanaInicial: Iniciando el sistema de análisis de datos.
+04/jul/2021 11:25:27,534- App: Error al conectar con la base de datos.
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at okio.InputStreamSource.read(JvmOkio.kt:90)
+	at okio.AsyncTimeout$source$1.read(AsyncTimeout.kt:129)
+	at okio.RealBufferedSource.indexOf(RealBufferedSource.kt:427)
+	at okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.kt:320)
+	at okhttp3.internal.http1.HeadersReader.readLine(HeadersReader.kt:29)
+	at okhttp3.internal.http1.Http1ExchangeCodec.readResponseHeaders(Http1ExchangeCodec.kt:178)
+	at okhttp3.internal.connection.Exchange.readResponseHeaders(Exchange.kt:106)
+	at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.kt:79)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:34)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at org.influxdb.impl.BasicAuthInterceptor.intercept(BasicAuthInterceptor.java:22)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at org.influxdb.impl.GzipRequestInterceptor.intercept(GzipRequestInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.logging.HttpLoggingInterceptor.intercept(HttpLoggingInterceptor.kt:154)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+	at retrofit2.OkHttpCall.execute(OkHttpCall.java:204)
+	at org.influxdb.impl.InfluxDBImpl.ping(InfluxDBImpl.java:391)
+	at com.tfg.productor.App.iniciar(App.java:84)
+	at com.tfg.ventanas.VentanaInicial$4$1.doInBackground(VentanaInicial.java:213)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+04/jul/2021 11:26:21,263- App: Inicio del sistema
+04/jul/2021 11:26:21,491- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+04/jul/2021 11:26:21,491- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+04/jul/2021 11:26:21,491- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+04/jul/2021 11:26:21,491- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+04/jul/2021 11:26:21,491- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+04/jul/2021 11:26:21,507- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+04/jul/2021 11:26:21,507- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+04/jul/2021 11:26:21,507- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+04/jul/2021 11:26:21,507- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+04/jul/2021 11:26:21,576- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+04/jul/2021 11:26:21,576- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+04/jul/2021 11:26:21,576- AnalizadorTermico: Nuevo analizador Térmico
+04/jul/2021 11:26:21,576- App: Añadido Analizador de temperatura a la lista de Analizadores.
+04/jul/2021 11:26:29,147- App: Inicio del sistema
+04/jul/2021 11:26:29,480- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+04/jul/2021 11:26:29,488- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+04/jul/2021 11:26:29,490- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+04/jul/2021 11:26:29,498- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+04/jul/2021 11:26:29,500- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+04/jul/2021 11:26:29,508- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+04/jul/2021 11:26:29,510- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+04/jul/2021 11:26:29,510- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+04/jul/2021 11:26:29,510- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+04/jul/2021 11:26:29,626- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+04/jul/2021 11:26:29,699- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+04/jul/2021 11:26:29,701- AnalizadorTermico: Nuevo analizador Térmico
+04/jul/2021 11:26:29,701- App: Añadido Analizador de temperatura a la lista de Analizadores.
+04/jul/2021 11:26:31,653- VentanaInicial: Iniciando el sistema de análisis de datos.
+04/jul/2021 11:26:45,022- App: Error al conectar con la base de datos.
+java.net.SocketTimeoutException: timeout
+	at okio.SocketAsyncTimeout.newTimeoutException(JvmOkio.kt:143)
+	at okio.AsyncTimeout.access$newTimeoutException(AsyncTimeout.kt:162)
+	at okio.AsyncTimeout$source$1.read(AsyncTimeout.kt:335)
+	at okio.RealBufferedSource.indexOf(RealBufferedSource.kt:427)
+	at okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.kt:320)
+	at okhttp3.internal.http1.HeadersReader.readLine(HeadersReader.kt:29)
+	at okhttp3.internal.http1.Http1ExchangeCodec.readResponseHeaders(Http1ExchangeCodec.kt:178)
+	at okhttp3.internal.connection.Exchange.readResponseHeaders(Exchange.kt:106)
+	at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.kt:79)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:34)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at org.influxdb.impl.BasicAuthInterceptor.intercept(BasicAuthInterceptor.java:22)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at org.influxdb.impl.GzipRequestInterceptor.intercept(GzipRequestInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.logging.HttpLoggingInterceptor.intercept(HttpLoggingInterceptor.kt:154)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+	at retrofit2.OkHttpCall.execute(OkHttpCall.java:204)
+	at org.influxdb.impl.InfluxDBImpl.ping(InfluxDBImpl.java:391)
+	at com.tfg.productor.App.iniciar(App.java:84)
+	at com.tfg.ventanas.VentanaInicial$4$1.doInBackground(VentanaInicial.java:213)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at okio.InputStreamSource.read(JvmOkio.kt:90)
+	at okio.AsyncTimeout$source$1.read(AsyncTimeout.kt:129)
+	... 33 more
+04/jul/2021 11:26:55,036- App: Error al conectar con la base de datos.
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at okio.InputStreamSource.read(JvmOkio.kt:90)
+	at okio.AsyncTimeout$source$1.read(AsyncTimeout.kt:129)
+	at okio.RealBufferedSource.indexOf(RealBufferedSource.kt:427)
+	at okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.kt:320)
+	at okhttp3.internal.http1.HeadersReader.readLine(HeadersReader.kt:29)
+	at okhttp3.internal.http1.Http1ExchangeCodec.readResponseHeaders(Http1ExchangeCodec.kt:178)
+	at okhttp3.internal.connection.Exchange.readResponseHeaders(Exchange.kt:106)
+	at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.kt:79)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:34)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at org.influxdb.impl.BasicAuthInterceptor.intercept(BasicAuthInterceptor.java:22)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at org.influxdb.impl.GzipRequestInterceptor.intercept(GzipRequestInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.logging.HttpLoggingInterceptor.intercept(HttpLoggingInterceptor.kt:154)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+	at retrofit2.OkHttpCall.execute(OkHttpCall.java:204)
+	at org.influxdb.impl.InfluxDBImpl.ping(InfluxDBImpl.java:391)
+	at com.tfg.productor.App.iniciar(App.java:84)
+	at com.tfg.productor.App.iniciar(App.java:95)
+	at com.tfg.ventanas.VentanaInicial$4$1.doInBackground(VentanaInicial.java:213)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+04/jul/2021 11:27:03,474- App: Conexión con la base de datos realizada correctamente.
+04/jul/2021 11:27:03,474- App: Iniciando análisis de la temperatura
+04/jul/2021 11:27:03,474- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:27:03,703- App: Inicio del análisis de la temperatura
+04/jul/2021 11:27:03,703- AnalizadorTermico: Iniciado el hilo del analizador de inercia térmica.
+04/jul/2021 11:27:03,703- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+04/jul/2021 11:27:03,719- App: Primer Análisis Térmico.
+04/jul/2021 11:27:03,719- App: Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.
+04/jul/2021 11:27:03,719- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:27:03,719- AnalizadorTermico: Analizador Térmico recibe notificación de nuevos datos.
+04/jul/2021 11:27:03,735- AnalizadorTermico: Análisis de la tendencia de la temperatura mediante la regresión lineal.
+04/jul/2021 11:27:03,735- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:27:03,735- AnalizadorTermico: Análisis de la temperatura por regresión lineal iniciado.
+04/jul/2021 11:27:03,735- AnalizadorTermico: La predicción de temperatura dentro de 30 minutos será de 22.23380477563478 según el análisis de regresión lineal.
+04/jul/2021 11:27:03,750- AnalizadorTermico: La predicción de temperatura no ha superado el umbral 30.0ºC.
+
+04/jul/2021 11:27:03,750- AnalizadorTermico: Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.
+04/jul/2021 11:27:05,746- App: Espera de 15 segundos
+04/jul/2021 11:27:18,754- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+04/jul/2021 11:27:20,843- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:27:20,940- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:27:20,940- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:27:20,940- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:27:22,953- App: Espera de 15 segundos
+04/jul/2021 11:27:37,999- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:27:38,010- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:27:38,010- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:27:38,012- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:27:40,021- App: Espera de 15 segundos
+04/jul/2021 11:27:55,111- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:27:55,117- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:27:55,117- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:27:55,119- App: Error al conectar con la base de datos.
+04/jul/2021 11:27:55,130- App: Conexión con la base de datos realizada correctamente.
+04/jul/2021 11:27:55,130- App: Iniciando análisis de la temperatura
+04/jul/2021 11:27:55,130- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:27:55,139- App: Inicio del análisis de la temperatura
+04/jul/2021 11:27:55,139- App: Primer Análisis Térmico.
+04/jul/2021 11:27:55,139- App: Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.
+04/jul/2021 11:27:55,139- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:27:55,139- AnalizadorTermico: Analizador Térmico recibe notificación de nuevos datos.
+04/jul/2021 11:27:55,139- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:27:55,148- AnalizadorTermico: Análisis de la tendencia de la temperatura mediante la regresión lineal.
+04/jul/2021 11:27:55,148- AnalizadorTermico: Análisis de la temperatura por regresión lineal iniciado.
+04/jul/2021 11:27:55,148- AnalizadorTermico: La predicción de temperatura dentro de 30 minutos será de 22.83057746035047 según el análisis de regresión lineal.
+04/jul/2021 11:27:55,148- AnalizadorTermico: La predicción de temperatura no ha superado el umbral 30.0ºC.
+
+04/jul/2021 11:27:55,148- AnalizadorTermico: Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.
+04/jul/2021 11:27:57,140- App: Espera de 15 segundos

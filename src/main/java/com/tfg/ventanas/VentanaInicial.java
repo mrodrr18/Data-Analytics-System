@@ -302,7 +302,7 @@ public class VentanaInicial  extends JFrame	{
 		};
 		botonInfoAPDF.addActionListener(infoAPDF);
 		
-		//Boton 8, abrir carpeta ficheros
+		//Boton 8, abrir carpeta archivos
 				JButton botonAbrirCarpetaFicheros = new JButton();
 				botonAbrirCarpetaFicheros.setBounds(350, 500, 240, 40);
 				botonAbrirCarpetaFicheros.setText("Carpeta ficheros generados");
