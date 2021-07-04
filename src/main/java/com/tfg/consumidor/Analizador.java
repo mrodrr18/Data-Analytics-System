@@ -31,6 +31,8 @@ public abstract class Analizador extends Thread{
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
-	
+	private void hola() {
+		
+	}
 	//********************************************** PARA TESTCrear variable de estado boolean y guardo si ha enviado alerta
 }

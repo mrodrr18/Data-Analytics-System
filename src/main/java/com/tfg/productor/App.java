@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 import javax.swing.SwingUtilities;
@@ -136,6 +137,7 @@ public class App
     	List<List<Object>> listaTemperatura2;
     	ArrayList <Double> fechas = analizadorTemp.getTiempos();
     	ArrayList <Double> datosTemperatura = analizadorTemp.getNuevosDatos();
+    	Calendar calendar;
     	this.setSalir(false);
     	
     	logger.info("Sentencia SQL SELECT a la base de datos de la medida temperatura");
@@ -170,21 +172,12 @@ public class App
 			ejecucion.append("Iniciado Analizador de los datos de Temperatura, a continuación se comprobará si hay datos nuevos del sensor.\n");
 	    	
 			logger.info("Inicio del análisis de la temperatura");
+			
 			for(int i=listaTemperatura2.size()-10; i< listaTemperatura2.size(); i++) {
 				datosTemperatura.add((Double) listaTemperatura2.get(i).get(1));
-				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSS'Z'");
-        		
-				Date fecha = null;
-				try {
-					//Formato EPOCH
-					fecha = format.parse((String) queryResult.getResults().get(0).getSeries().get(0).getValues().get(i).get(0));
-					analizadorTemp.setUltimaFecha(fecha);
-					fechas.add((double)fecha.getTime());
-					
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					logger.error("Error al cambiar el formato de la fecha desde la base de datos");
-				}
+				calendar = javax.xml.bind.DatatypeConverter.parseDateTime(listaTemperatura.get(i).get(0).toString());
+				analizadorTemp.setUltimaFecha(calendar.getTime());
+				fechas.add((double)calendar.getTimeInMillis());
 			}
 									
 						System.out.println("Primer Análisis Térmico.");
@@ -213,19 +206,9 @@ public class App
     			logger.info("Fechas de cada medida en formato double para el análisis mediante la regresión lineal.");
     			for(int i=pos; i< listaTemperatura2.size(); i++) {
     				datosTemperatura.add((Double) listaTemperatura2.get(i).get(1));
-    				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSS'Z'");
-            		
-					Date fecha = null;
-					try {
-						//Formato EPOCH
-						fecha = format.parse((String) queryResult.getResults().get(0).getSeries().get(0).getValues().get(i).get(0));
-						analizadorTemp.setUltimaFecha(fecha);
-						fechas.add((double)fecha.getTime());
-						
-					} catch (ParseException e) {
-						// TODO Auto-generated catch block
-						logger.error("Error al cambiar el formato de la fecha desde la base de datos");
-					}
+    				calendar = javax.xml.bind.DatatypeConverter.parseDateTime(listaTemperatura.get(i).get(0).toString());
+    				analizadorTemp.setUltimaFecha(calendar.getTime());
+    				fechas.add((double)calendar.getTimeInMillis());
     			}
     			
     			//*******************En las pruebas creo vector que genera alerta y otro que no. Comprueba la variable estado del hilo
@@ -267,9 +250,9 @@ public class App
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-    			System.out.println("Espere 15 segundos:");
-				vI.areaTexto.append("Espere 15 segundos:\n");
-				ejecucion.append("Espere 15 segundos:\n");
+    			System.out.println("Espere 15 segundos.");
+				vI.areaTexto.append("Espere 15 segundos.\n");
+				ejecucion.append("Espere 15 segundos.\n");
 				logger.info("Espera de 15 segundos");
 				
 				for(int i=0; i<15; i++) {
@@ -280,9 +263,9 @@ public class App
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						System.out.println("********************** "+(i+1)+" **********************");
-						vI.areaTexto.append("********************** "+(i+1)+" **********************\n");
-						ejecucion.append("********************** "+(i+1)+" **********************\n");
+						//System.out.println("********************** "+(i+1)+" **********************");
+						//vI.areaTexto.append("********************** "+(i+1)+" **********************\n");
+						//ejecucion.append("********************** "+(i+1)+" **********************\n");
 					}else {
 						break;
 					}
@@ -319,7 +302,7 @@ public class App
     public StringBuilder imprimeListaTemperaturas(){
     	final String serverURL = "http://localhost:8086", username = "root", password = "root";
     	List<List<Object>> listaTemperatura;
-    	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSS'Z'");
+    	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSS'Z'" , Locale.FRANCE);
     	influxDB = InfluxDBFactory.connect(serverURL, username, password);
     	Pong response = null;
     	logger.info("Llamada a la función que imprime la lista de los datos de temperatura almacenados.");
@@ -342,15 +325,12 @@ public class App
     	listaTemperatura = queryResult.getResults().get(0).getSeries().get(0).getValues();
     	
     	StringBuilder listaimprimir = new StringBuilder();
+    	Calendar calendar ;
     	
     	for(int i =0; i< listaTemperatura.size(); i++) {
-    		try {
-				System.out.println(format.parse(listaTemperatura.get(i).get(0).toString()) +"    "+listaTemperatura.get(i).get(1)+" ºC    ");
-				listaimprimir.append(format.parse(listaTemperatura.get(i).get(0).toString()) +"    "+listaTemperatura.get(i).get(1)+" ºC    \n");
-				
-			} catch (ParseException e) {
-				logger.error("Error al cambiar el formato de la fecha desde la base de datos");
-			}
+    		calendar = javax.xml.bind.DatatypeConverter.parseDateTime(listaTemperatura.get(i).get(0).toString());
+			System.out.println(calendar.getTime()+"    "+listaTemperatura.get(i).get(1)+" ºC    ");
+			listaimprimir.append(calendar.getTime()+"    "+listaTemperatura.get(i).get(1)+" ºC    \n");
     	}
     	logger.info("Lista de datos de temperatura almacenada en el sistema, lista para imprimir.");
 
@@ -418,36 +398,5 @@ public class App
 	public static void setvI(VentanaInicial vI) {
 		App.vI = vI;
 	}
-    
-    
-    
-/*DIAGRAMA DE ARQUITECTURA DESGLOSADO POR NIVELES 2 O 3 
- UNA CAJA PARA EL SISTEMA DE GESTION DE ALERTAS ENTRAN PARAMETROS AMBIENTALES Y SALE LA ALERTA
-  SIGUIENTE NIVEL 
-   DESGLOSO UN POCO MAS QUEDA MAS GRANDE EL DIAGRAMA TODO LO QUE QUIERA
-REquisitos siempre en imperativo debe ser o tiene que: 
-	captura de parámetros ambientales de forma distribuida
-	
-	Comunicacion inalambrica de alcance + de 300 metros hay que probarlo
-	
-	Tecnología de radiocomunicaciones de bajo ancho de banda y bajo consumo
-	
-		Requisito: que funcione con LoRA
-		Requisito: Se implementará en MKR WAN 1310
-	
-	Medidas persistentes en base de datos
-	
-	Debe enviar alertas si super un umbral
-	
-	Debe tener un sistema predictivo para generación de alertas
-	
-	Las alertas se enviaran por correo electrónico
-	
-	Debe ser modular para poder ampliar el numero de sensores y su naturaleza
-	
-	Inicialmente solo es necesario medir datos de temperatura para hacer un seguimiento de su evolucion
-	
-	
-	Luego de cada requisito tiene que ser indivisible y sacar varios de él*/
-    
+        
 }

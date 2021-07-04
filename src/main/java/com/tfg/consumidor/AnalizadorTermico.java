@@ -133,14 +133,14 @@ public class AnalizadorTermico extends Analizador {
 		//Como la temperatura ha sido superior a la temperatura umbral llamo al metodo que genera la alerta.
 		if(resultado > (double) this.umbral_Temperatura) {
 			// PARA TEST ********************************************return generarAlerta(resultado);
-			System.out.println("El resultado de la predicción: "+resultado+", supera el umbral "+this.umbral_Temperatura+". Se genera una alerta por correo electrónico.");
-			vI.areaTexto.append("El resultado de la predicción: "+resultado+", supera el umbral "+this.umbral_Temperatura+". Se genera una alerta por correo electrónico.\n");
-			logger.info("El resultado de la predicción: "+resultado+", supera el umbral "+this.umbral_Temperatura+". Se genera una alerta por correo electrónico.");
+			System.out.println("El resultado de la predicción: "+resultado+"ºC, supera el umbral "+this.umbral_Temperatura+"ºC. Se genera una alerta por correo electrónico.");
+			vI.areaTexto.append("El resultado de la predicción: "+resultado+", supera el umbral "+this.umbral_Temperatura+"ºC. Se genera una alerta por correo electrónico.\n");
+			logger.info("El resultado de la predicción: "+resultado+", supera el umbral "+this.umbral_Temperatura+"ºC. Se genera una alerta por correo electrónico.");
 			generarAlerta(resultado);
 		}else {
-			System.out.println("La predicción de temperatura no ha superado el umbral.");
-			vI.areaTexto.append("La predicción de temperatura no ha superado el umbral.\n");
-			logger.info("La predicción de temperatura no ha superado el umbral.");
+			System.out.println("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC");
+			vI.areaTexto.append("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC.\n");
+			logger.info("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC.\n");
 			
 		}
 	}
@@ -187,14 +187,14 @@ public class AnalizadorTermico extends Analizador {
 				realizarAnalisis();
 				
 				try {
-					System.out.println("Análisis finalizado. Espere 30 segundos para comprobar si hay nuevos datos del sensor.");
-					vI.areaTexto.append("Análisis finalizado. Espere 30 segundos para comprobar si hay nuevos datos del sensor.\n");
-					logger.info("Análisis finalizado. Espere 30 segundos para comprobar si hay nuevos datos del sensor.");
-					Thread.sleep(30000);
+					System.out.println("Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.");
+					vI.areaTexto.append("Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.\n");
+					logger.info("Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.");
+					Thread.sleep(15000);
 					despierta=false;
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
-					logger.error("Error al esperar los 30 segundos al finalizar la ejecución del hilo");
+					logger.error("Error al esperar los 15 segundos al finalizar la ejecución del hilo");
 					e.printStackTrace();
 				}
 				

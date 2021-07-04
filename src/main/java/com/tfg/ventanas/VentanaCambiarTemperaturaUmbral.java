@@ -129,10 +129,10 @@ public class VentanaCambiarTemperaturaUmbral extends JFrame{
 				ActionListener cambioDeUmbral = new ActionListener() {
 
 					public void actionPerformed(ActionEvent e) {
-						System.out.println("Umbral cambiado a: "+ cajaNumero.getText() +" .");
-						areaTextoInicial.append("Umbral cambiado a: "+ cajaNumero.getText() +" .\n");
-						ejecucion.append("Umbral cambiado a: "+ cajaNumero.getText() +" .\n");
-						logger.info("Umbral cambiado a: "+ cajaNumero.getText() +" .");
+						System.out.println("Umbral cambiado a: "+ cajaNumero.getText() +"ºC.");
+						areaTextoInicial.append("Umbral cambiado a: "+ cajaNumero.getText() +"ºC.\n");
+						ejecucion.append("Umbral cambiado a: "+ cajaNumero.getText() +"ºC.\n");
+						logger.info("Umbral cambiado a: "+ cajaNumero.getText() +"ºC.");
 					
 						analizadorTermico.setUmbral_Temperatura(Float.valueOf(cajaNumero.getText().replaceAll(",", ".")));
 						setVisible(false);
