@@ -17,6 +17,7 @@ public class AnalizadorTermico extends Analizador {
 	private ArrayList<Double> tiempos;
 	private float umbral_Temperatura;
 	private VentanaInicial vI;
+	private StringBuilder ejecucion;
 	private Date ultimaFecha;
 	private static Logger logger = LogManager.getLogger(AnalizadorTermico.class);
 	
@@ -41,6 +42,7 @@ public class AnalizadorTermico extends Analizador {
 		System.out.println("Umbral de temperatura configurado en "+ this.umbral_Temperatura+ " ºC.");
 		if(vI !=null) {
 			vI.areaTexto.append("Umbral de temperatura configurado en "+ this.umbral_Temperatura+ " ºC.\n");
+			ejecucion.append("Umbral de temperatura configurado en "+ this.umbral_Temperatura+ " ºC.\n");
 		}
 		logger.info("Umbral de temperatura configurado en "+ this.umbral_Temperatura+ " ºC.");
 
@@ -58,6 +60,7 @@ public class AnalizadorTermico extends Analizador {
 		//analisis_Valores_Consecutivos();
 		System.out.println("Análisis de la tendencia de la temperatura mediante la regresión lineal.");
 		vI.areaTexto.append("Análisis de la tendencia de la temperatura mediante la regresión lineal.\n");
+		ejecucion.append("Análisis de la tendencia de la temperatura mediante la regresión lineal.\n");
 		logger.info("Análisis de la tendencia de la temperatura mediante la regresión lineal.");
 		analisis_Regresion_Lineal();
 	
@@ -128,6 +131,7 @@ public class AnalizadorTermico extends Analizador {
 		//**************************************************************COMPROBAR QUE ES DENTRO DE 30 MINUTOS;
 		System.out.println("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.");
 		vI.areaTexto.append("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.\n");
+		ejecucion.append("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.\n");
 		logger.info("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.");
 		
 		//Como la temperatura ha sido superior a la temperatura umbral llamo al metodo que genera la alerta.
@@ -135,11 +139,13 @@ public class AnalizadorTermico extends Analizador {
 			// PARA TEST ********************************************return generarAlerta(resultado);
 			System.out.println("El resultado de la predicción: "+resultado+"ºC, supera el umbral "+this.umbral_Temperatura+"ºC. Se genera una alerta por correo electrónico.");
 			vI.areaTexto.append("El resultado de la predicción: "+resultado+", supera el umbral "+this.umbral_Temperatura+"ºC. Se genera una alerta por correo electrónico.\n");
+			ejecucion.append("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.\n");
 			logger.info("El resultado de la predicción: "+resultado+", supera el umbral "+this.umbral_Temperatura+"ºC. Se genera una alerta por correo electrónico.");
 			generarAlerta(resultado);
 		}else {
 			System.out.println("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC");
 			vI.areaTexto.append("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC.\n");
+			ejecucion.append("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC.\n");
 			logger.info("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC.\n");
 			
 		}
@@ -149,6 +155,7 @@ public class AnalizadorTermico extends Analizador {
 	private void generarAlerta(double resultado) {
 		System.out.println("La predicción de temperatura supera el umbral, se generará una alerta por correo electrónico.");
 		vI.areaTexto.append("La predicción de temperatura supera el umbral, se generará una alerta por correo electrónico.\n");
+		ejecucion.append("La predicción de temperatura supera el umbral, se generará una alerta por correo electrónico.\n");
 		logger.info("Para generar la alerta se crea un objeto Alerta y se llama al método send.");
 		Alerta email = new Alerta();
 		email.send("Analizador Térmico", resultado);
@@ -160,6 +167,7 @@ public class AnalizadorTermico extends Analizador {
 		
 		System.out.println("INICIADO EL ANALIZADOR DE INERCIA TÉRMICA");
 		vI.areaTexto.append("Iniciado el analizador de inercia térmica.\n");
+		ejecucion.append("Iniciado el analizador de inercia térmica.\n");
 		logger.info("Iniciado el hilo del analizador de inercia térmica.");
 		
 			while(true) {
@@ -170,6 +178,7 @@ public class AnalizadorTermico extends Analizador {
 
 						System.out.println("Analizador Térmico esperando a que haya nuevos datos");
 						vI.areaTexto.append("Analizador Térmico esperando a que haya nuevos datos.\n");
+						ejecucion.append("Analizador Térmico esperando a que haya nuevos datos.\n");
 						logger.info("Analizador Térmico esperando a que haya nuevos datos.");
 						wait();
 			          } catch(InterruptedException e) {
@@ -180,6 +189,7 @@ public class AnalizadorTermico extends Analizador {
 				//Despierta al hilo porque hay datos nuevos, analizamos la tendencia
 				System.out.println("Analizador Térmico recibe notificación de nuevos datos.");
 				vI.areaTexto.append("Analizador Térmico recibe notificación de nuevos datos.\n");
+				ejecucion.append("Analizador Térmico recibe notificación de nuevos datos.\n");
 				logger.info("Analizador Térmico recibe notificación de nuevos datos.");
 				//configurarUmbrales();
 
@@ -189,6 +199,7 @@ public class AnalizadorTermico extends Analizador {
 				try {
 					System.out.println("Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.");
 					vI.areaTexto.append("Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.\n");
+					ejecucion.append("Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.\n");
 					logger.info("Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.");
 					Thread.sleep(15000);
 					despierta=false;
@@ -260,6 +271,20 @@ public class AnalizadorTermico extends Analizador {
 	 */
 	public void setvI(VentanaInicial vI) {
 		this.vI = vI;
+	}
+
+	/**
+	 * @return the ejecucion
+	 */
+	public StringBuilder getEjecucion() {
+		return ejecucion;
+	}
+
+	/**
+	 * @param ejecucion the ejecucion to set
+	 */
+	public void setEjecucion(StringBuilder ejecucion) {
+		this.ejecucion = ejecucion;
 	}
 
 	/**

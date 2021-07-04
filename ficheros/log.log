@@ -352,3 +352,260 @@
 04/jul/2021 11:07:55,962- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
 04/jul/2021 11:07:55,962- AnalizadorTermico: Nuevo analizador Térmico
 04/jul/2021 11:07:55,962- App: Añadido Analizador de temperatura a la lista de Analizadores.
+04/jul/2021 11:08:59,946- VentanaInicial: Iniciando el sistema de análisis de datos.
+04/jul/2021 11:09:02,025- App: Conexión con la base de datos realizada correctamente.
+04/jul/2021 11:09:02,025- App: Iniciando análisis de la temperatura
+04/jul/2021 11:09:02,025- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:09:02,275- App: Inicio del análisis de la temperatura
+04/jul/2021 11:09:02,275- AnalizadorTermico: Iniciado el hilo del analizador de inercia térmica.
+04/jul/2021 11:09:02,275- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+04/jul/2021 11:09:02,283- App: Primer Análisis Térmico.
+04/jul/2021 11:09:02,285- App: Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.
+04/jul/2021 11:09:02,285- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:09:02,285- AnalizadorTermico: Analizador Térmico recibe notificación de nuevos datos.
+04/jul/2021 11:09:02,285- AnalizadorTermico: Análisis de la tendencia de la temperatura mediante la regresión lineal.
+04/jul/2021 11:09:02,285- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:09:02,285- AnalizadorTermico: Análisis de la temperatura por regresión lineal iniciado.
+04/jul/2021 11:09:02,295- AnalizadorTermico: La predicción de temperatura dentro de 30 minutos será de 25.380482430322445 según el análisis de regresión lineal.
+04/jul/2021 11:09:02,295- AnalizadorTermico: La predicción de temperatura no ha superado el umbral 30.0ºC.
+
+04/jul/2021 11:09:02,305- AnalizadorTermico: Análisis finalizado. Espere 30 segundos para comprobar si hay nuevos datos del sensor.
+04/jul/2021 11:09:04,300- App: Espera de 15 segundos
+04/jul/2021 11:09:19,426- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:09:19,442- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:09:19,442- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:09:19,442- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:09:21,447- App: Espera de 15 segundos
+04/jul/2021 11:09:32,319- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+04/jul/2021 11:09:36,536- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:09:36,561- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:09:36,561- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:09:36,565- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:09:38,567- App: Espera de 15 segundos
+04/jul/2021 11:09:53,685- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:09:53,696- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:09:53,696- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:09:53,699- App: Hay datos nuevos del sensor. Comienza el Análisis Térmico.
+04/jul/2021 11:09:53,700- App: Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.
+04/jul/2021 11:09:53,704- AnalizadorTermico: Analizador Térmico recibe notificación de nuevos datos.
+04/jul/2021 11:09:53,704- AnalizadorTermico: Análisis de la tendencia de la temperatura mediante la regresión lineal.
+04/jul/2021 11:09:53,705- AnalizadorTermico: Análisis de la temperatura por regresión lineal iniciado.
+04/jul/2021 11:09:53,713- AnalizadorTermico: La predicción de temperatura dentro de 30 minutos será de 25.35867870970651 según el análisis de regresión lineal.
+04/jul/2021 11:09:53,719- AnalizadorTermico: La predicción de temperatura no ha superado el umbral 30.0ºC.
+
+04/jul/2021 11:09:53,720- AnalizadorTermico: Análisis finalizado. Espere 30 segundos para comprobar si hay nuevos datos del sensor.
+04/jul/2021 11:09:55,709- App: Espera de 15 segundos
+04/jul/2021 11:10:10,795- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:10:10,812- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:10:10,812- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:10:10,812- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:10:12,817- App: Espera de 15 segundos
+04/jul/2021 11:10:23,725- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+04/jul/2021 11:10:26,347- App: Análisis de Temperatura finalizado.
+04/jul/2021 11:10:26,932- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:10:26,940- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:10:27,501- VentanaCambiarTemperaturaUmbral: Creado el panel de la ventana gráfica que cambia el umbral de temperatura.
+04/jul/2021 11:10:27,501- VentanaCambiarTemperaturaUmbral: Añadida a la ventana gráfica el area de texto con información sobre cómo cambiar el umbral.
+04/jul/2021 11:10:27,501- VentanaCambiarTemperaturaUmbral: Añadida etiqueta relacionada con el cuadro de texto donde se introduce el umbral deseado.
+04/jul/2021 11:10:27,516- VentanaCambiarTemperaturaUmbral: Añadido el cuadro de texto donde se cambia el umbral de temperatura.
+04/jul/2021 11:10:27,516- VentanaCambiarTemperaturaUmbral: Añadido botón para actualizar el umbral.
+04/jul/2021 11:10:31,467- VentanaCambiarTemperaturaUmbral: Umbral cambiado a: 14,00 .
+04/jul/2021 11:10:33,673- VentanaInicial: Solicitud para generar el archivo PDF con la información de la ejecución actual.
+04/jul/2021 11:10:34,206- App: PDF con la informacion de la ejecucion generado correctamente en la carpeta: "C:\Users\mrrtr\eclipse-workspace\tfg\ficheros" .
+04/jul/2021 11:10:35,752- VentanaInicial: Visualización gráfica mediante Grafana en navegador de las medidas almacenadas.
+04/jul/2021 11:10:40,172- VentanaMuestraMedidas: Creado el panel de la ventana gráfica que muestra las medidas de temperatura.
+04/jul/2021 11:10:40,179- VentanaMuestraMedidas: Añadida a la ventana gráfica el area de texto donde se visualizarán las medidas de temperatura almacenadas.
+04/jul/2021 11:10:40,222- App: Llamada a la función que imprime la lista de los datos de temperatura almacenados.
+04/jul/2021 11:10:40,299- App: Conexión con la base de datos realizada correctamente
+04/jul/2021 11:10:40,299- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:10:40,423- App: Lista de datos de temperatura almacenada en el sistema, lista para imprimir.
+04/jul/2021 11:10:40,423- VentanaInicial: Medidas de Temperatura mostradas en la interfaz de usuario.
+04/jul/2021 11:11:30,759- App: Inicio del sistema
+04/jul/2021 11:11:30,945- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+04/jul/2021 11:11:30,960- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+04/jul/2021 11:11:30,960- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+04/jul/2021 11:11:30,960- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+04/jul/2021 11:11:30,960- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+04/jul/2021 11:11:30,960- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+04/jul/2021 11:11:30,970- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+04/jul/2021 11:11:30,971- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+04/jul/2021 11:11:30,972- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+04/jul/2021 11:11:31,003- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+04/jul/2021 11:11:31,003- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+04/jul/2021 11:11:31,003- AnalizadorTermico: Nuevo analizador Térmico
+04/jul/2021 11:11:31,003- App: Añadido Analizador de temperatura a la lista de Analizadores.
+04/jul/2021 11:11:32,649- VentanaInicial: Iniciando el sistema de análisis de datos.
+04/jul/2021 11:11:34,516- App: Conexión con la base de datos realizada correctamente.
+04/jul/2021 11:11:34,516- App: Iniciando análisis de la temperatura
+04/jul/2021 11:11:34,516- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:11:34,576- App: Inicio del análisis de la temperatura
+04/jul/2021 11:11:34,576- AnalizadorTermico: Iniciado el hilo del analizador de inercia térmica.
+04/jul/2021 11:11:34,576- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+04/jul/2021 11:11:34,588- App: Primer Análisis Térmico.
+04/jul/2021 11:11:34,588- App: Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.
+04/jul/2021 11:11:34,588- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:11:34,588- AnalizadorTermico: Analizador Térmico recibe notificación de nuevos datos.
+04/jul/2021 11:11:34,588- AnalizadorTermico: Análisis de la tendencia de la temperatura mediante la regresión lineal.
+04/jul/2021 11:11:34,588- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:11:34,588- AnalizadorTermico: Análisis de la temperatura por regresión lineal iniciado.
+04/jul/2021 11:11:34,588- AnalizadorTermico: La predicción de temperatura dentro de 30 minutos será de 25.34380540181337 según el análisis de regresión lineal.
+04/jul/2021 11:11:34,588- AnalizadorTermico: La predicción de temperatura no ha superado el umbral 30.0ºC.
+
+04/jul/2021 11:11:34,604- AnalizadorTermico: Análisis finalizado. Espere 30 segundos para comprobar si hay nuevos datos del sensor.
+04/jul/2021 11:11:36,592- App: Espera de 15 segundos
+04/jul/2021 11:11:48,252- VentanaInicial: Visualización gráfica mediante Grafana en navegador de las medidas almacenadas.
+04/jul/2021 11:11:51,692- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:11:51,706- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:11:51,706- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:11:51,711- App: Hay datos nuevos del sensor. Comienza el Análisis Térmico.
+04/jul/2021 11:11:51,712- App: Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.
+04/jul/2021 11:11:53,188- VentanaMuestraMedidas: Creado el panel de la ventana gráfica que muestra las medidas de temperatura.
+04/jul/2021 11:11:53,196- VentanaMuestraMedidas: Añadida a la ventana gráfica el area de texto donde se visualizarán las medidas de temperatura almacenadas.
+04/jul/2021 11:11:53,233- App: Llamada a la función que imprime la lista de los datos de temperatura almacenados.
+04/jul/2021 11:11:53,278- App: Conexión con la base de datos realizada correctamente
+04/jul/2021 11:11:53,278- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:11:53,396- App: Lista de datos de temperatura almacenada en el sistema, lista para imprimir.
+04/jul/2021 11:11:53,403- VentanaInicial: Medidas de Temperatura mostradas en la interfaz de usuario.
+04/jul/2021 11:11:53,717- App: Espera de 15 segundos
+04/jul/2021 11:11:57,965- VentanaInicial: Solicitud para crear el fichero pdf con las medidas de las temperaturas.
+04/jul/2021 11:11:58,448- App: Llamada a la función que imprime la lista de los datos de temperatura almacenados.
+04/jul/2021 11:11:58,452- App: Conexión con la base de datos realizada correctamente
+04/jul/2021 11:11:58,452- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:11:58,499- App: Lista de datos de temperatura almacenada en el sistema, lista para imprimir.
+04/jul/2021 11:11:58,713- App: PDF con las medidas de las temperaturas generado correctamente en la carpeta: "C:\Users\mrrtr\eclipse-workspace\tfg\ficheros" .
+04/jul/2021 11:12:04,618- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+04/jul/2021 11:12:08,839- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:12:08,899- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:12:08,900- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:12:08,902- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:12:10,916- App: Espera de 15 segundos
+04/jul/2021 11:12:26,015- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:12:26,023- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:12:26,023- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:12:26,025- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:12:28,033- App: Espera de 15 segundos
+04/jul/2021 11:12:43,153- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:12:43,163- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:12:43,163- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:12:43,164- App: Hay datos nuevos del sensor. Comienza el Análisis Térmico.
+04/jul/2021 11:12:43,164- App: Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.
+04/jul/2021 11:12:43,165- AnalizadorTermico: Analizador Térmico recibe notificación de nuevos datos.
+04/jul/2021 11:12:43,168- AnalizadorTermico: Análisis de la tendencia de la temperatura mediante la regresión lineal.
+04/jul/2021 11:12:43,168- AnalizadorTermico: Análisis de la temperatura por regresión lineal iniciado.
+04/jul/2021 11:12:43,169- AnalizadorTermico: La predicción de temperatura dentro de 30 minutos será de 25.388943214467872 según el análisis de regresión lineal.
+04/jul/2021 11:12:43,171- AnalizadorTermico: La predicción de temperatura no ha superado el umbral 30.0ºC.
+
+04/jul/2021 11:12:43,173- AnalizadorTermico: Análisis finalizado. Espere 30 segundos para comprobar si hay nuevos datos del sensor.
+04/jul/2021 11:12:45,177- App: Espera de 15 segundos
+04/jul/2021 11:13:00,333- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:13:00,342- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:13:00,342- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:13:00,344- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:13:02,346- App: Espera de 15 segundos
+04/jul/2021 11:13:13,175- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+04/jul/2021 11:13:17,489- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:13:17,494- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:13:17,494- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:13:17,496- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:13:19,502- App: Espera de 15 segundos
+04/jul/2021 11:13:34,681- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:13:34,689- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:13:34,689- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:13:34,690- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:13:36,691- App: Espera de 15 segundos
+04/jul/2021 11:13:50,372- VentanaInicial: Solicitud para generar el archivo PDF con la información de la ejecución actual.
+04/jul/2021 11:13:50,388- App: PDF con la informacion de la ejecucion generado correctamente en la carpeta: "C:\Users\mrrtr\eclipse-workspace\tfg\ficheros" .
+04/jul/2021 11:13:51,847- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:13:51,858- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:13:51,858- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:13:51,860- App: Hay datos nuevos del sensor. Comienza el Análisis Térmico.
+04/jul/2021 11:13:51,860- App: Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.
+04/jul/2021 11:13:51,861- AnalizadorTermico: Analizador Térmico recibe notificación de nuevos datos.
+04/jul/2021 11:13:51,869- AnalizadorTermico: Análisis de la tendencia de la temperatura mediante la regresión lineal.
+04/jul/2021 11:13:51,869- AnalizadorTermico: Análisis de la temperatura por regresión lineal iniciado.
+04/jul/2021 11:13:51,870- AnalizadorTermico: La predicción de temperatura dentro de 30 minutos será de 25.386465825569758 según el análisis de regresión lineal.
+04/jul/2021 11:13:51,873- AnalizadorTermico: La predicción de temperatura no ha superado el umbral 30.0ºC.
+
+04/jul/2021 11:13:51,873- AnalizadorTermico: Análisis finalizado. Espere 30 segundos para comprobar si hay nuevos datos del sensor.
+04/jul/2021 11:13:53,860- App: Espera de 15 segundos
+04/jul/2021 11:14:09,021- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:14:09,034- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:14:09,034- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+04/jul/2021 11:14:09,035- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:14:11,042- App: Espera de 15 segundos
+04/jul/2021 11:20:12,084- App: Inicio del sistema
+04/jul/2021 11:20:12,285- VentanaInicial: Creado el panel de la ventana grÃ¡fica inicial.
+04/jul/2021 11:20:12,285- VentanaInicial: AÃ±adido botÃ³n para acceder a Grafana en la interfaz grÃ¡fica inicial.
+04/jul/2021 11:20:12,285- VentanaInicial: AÃ±adido botÃ³n para ver en una ventana diferente las medidas guardadas de la temperatura.
+04/jul/2021 11:20:12,285- VentanaInicial: AÃ±adido botÃ³n para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+04/jul/2021 11:20:12,285- VentanaInicial: AÃ±adido botÃ³n para calcular la tendencia de las medidas de temperatura segÃºn la regresiÃ³n lineal.
+04/jul/2021 11:20:12,285- VentanaInicial: AÃ±adido botÃ³n para pausar el anÃ¡lisis de las medidas de temepratura.
+04/jul/2021 11:20:12,285- VentanaInicial: AÃ±adido botÃ³n para cambiar el umbral del anÃ¡lisis de temeperatura.
+04/jul/2021 11:20:12,285- VentanaInicial: AÃ±adido botÃ³n para guardar en un PDF la informaciÃ³n de la ejecuciÃ³n actual.
+04/jul/2021 11:20:12,301- VentanaInicial: AÃ±adido botÃ³n para abrir la carpeta con los ficheros generados.
+04/jul/2021 11:20:12,343- VentanaInicial: AÃ±adida a la ventana inicial el area de texto donde se visualizarÃ¡ la informaciÃ³n de la ejecuciÃ³n actual.
+04/jul/2021 11:20:12,358- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ÂºC.
+04/jul/2021 11:20:12,358- AnalizadorTermico: Nuevo analizador TÃ©rmico
+04/jul/2021 11:20:12,358- App: AÃ±adido Analizador de temperatura a la lista de Analizadores.
+04/jul/2021 11:20:16,177- VentanaInicial: Iniciando el sistema de anÃ¡lisis de datos.
+04/jul/2021 11:20:17,972- App: ConexiÃ³n con la base de datos realizada correctamente.
+04/jul/2021 11:20:17,972- App: Iniciando anÃ¡lisis de la temperatura
+04/jul/2021 11:20:17,972- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:20:18,021- App: Inicio del anÃ¡lisis de la temperatura
+04/jul/2021 11:20:18,028- AnalizadorTermico: Iniciado el hilo del analizador de inercia tÃ©rmica.
+04/jul/2021 11:20:18,031- AnalizadorTermico: Analizador TÃ©rmico esperando a que haya nuevos datos.
+04/jul/2021 11:20:18,042- App: Primer AnÃ¡lisis TÃ©rmico.
+04/jul/2021 11:20:18,042- App: NotificaciÃ³n al Analizador de Temperatura para iniciar el cÃ¡lculo de la tendencia.
+04/jul/2021 11:20:18,042- App: Fechas de cada medida en formato double para el anÃ¡lisis mediante la regresiÃ³n lineal.
+04/jul/2021 11:20:18,042- AnalizadorTermico: Analizador TÃ©rmico recibe notificaciÃ³n de nuevos datos.
+04/jul/2021 11:20:18,042- AnalizadorTermico: AnÃ¡lisis de la tendencia de la temperatura mediante la regresiÃ³n lineal.
+04/jul/2021 11:20:18,042- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:20:18,042- AnalizadorTermico: AnÃ¡lisis de la temperatura por regresiÃ³n lineal iniciado.
+04/jul/2021 11:20:18,058- AnalizadorTermico: La predicciÃ³n de temperatura dentro de 30 minutos serÃ¡ de 22.339882841799408 segÃºn el anÃ¡lisis de regresiÃ³n lineal.
+04/jul/2021 11:20:18,058- AnalizadorTermico: La predicciÃ³n de temperatura no ha superado el umbral 30.0ÂºC.
+
+04/jul/2021 11:20:18,073- AnalizadorTermico: AnÃ¡lisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.
+04/jul/2021 11:20:20,043- App: Espera de 15 segundos
+04/jul/2021 11:20:33,084- AnalizadorTermico: Analizador TÃ©rmico esperando a que haya nuevos datos.
+04/jul/2021 11:20:35,111- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:20:35,120- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:20:35,120- App: Fechas de cada medida en formato double para el anÃ¡lisis mediante la regresiÃ³n lineal.
+04/jul/2021 11:20:35,120- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:20:37,134- App: Espera de 15 segundos
+04/jul/2021 11:20:52,181- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:20:52,192- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:20:52,192- App: Fechas de cada medida en formato double para el anÃ¡lisis mediante la regresiÃ³n lineal.
+04/jul/2021 11:20:52,192- App: Error al conectar con la base de datos.
+04/jul/2021 11:21:16,330- App: AnÃ¡lisis de Temperatura finalizado.
+04/jul/2021 11:21:17,933- VentanaInicial: Iniciando el sistema de anÃ¡lisis de datos.
+04/jul/2021 11:21:17,956- App: ConexiÃ³n con la base de datos realizada correctamente.
+04/jul/2021 11:21:17,956- App: Iniciando anÃ¡lisis de la temperatura
+04/jul/2021 11:21:17,956- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:21:17,965- App: Inicio del anÃ¡lisis de la temperatura
+04/jul/2021 11:21:17,965- App: Primer AnÃ¡lisis TÃ©rmico.
+04/jul/2021 11:21:17,965- App: NotificaciÃ³n al Analizador de Temperatura para iniciar el cÃ¡lculo de la tendencia.
+04/jul/2021 11:21:17,965- App: Fechas de cada medida en formato double para el anÃ¡lisis mediante la regresiÃ³n lineal.
+04/jul/2021 11:21:17,965- AnalizadorTermico: Analizador TÃ©rmico recibe notificaciÃ³n de nuevos datos.
+04/jul/2021 11:21:17,965- AnalizadorTermico: AnÃ¡lisis de la tendencia de la temperatura mediante la regresiÃ³n lineal.
+04/jul/2021 11:21:17,965- LinearRegression: Longitud de la lista de tiempos y de medidas distinta.
+04/jul/2021 11:21:17,965- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:21:19,972- App: Espera de 15 segundos
+04/jul/2021 11:21:35,033- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:21:35,042- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:21:35,042- App: Fechas de cada medida en formato double para el anÃ¡lisis mediante la regresiÃ³n lineal.
+04/jul/2021 11:21:35,044- App: No hay nuevos datos de temperatura en la base de datos.
+04/jul/2021 11:21:37,058- App: Espera de 15 segundos
+04/jul/2021 11:21:41,324- VentanaMuestraMedidas: Creado el panel de la ventana grÃ¡fica que muestra las medidas de temperatura.
+04/jul/2021 11:21:41,336- VentanaMuestraMedidas: AÃ±adida a la ventana grÃ¡fica el area de texto donde se visualizarÃ¡n las medidas de temperatura almacenadas.
+04/jul/2021 11:21:41,365- App: Llamada a la funciÃ³n que imprime la lista de los datos de temperatura almacenados.
+04/jul/2021 11:21:41,389- App: ConexiÃ³n con la base de datos realizada correctamente
+04/jul/2021 11:21:41,390- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+04/jul/2021 11:21:41,521- App: Lista de datos de temperatura almacenada en el sistema, lista para imprimir.
+04/jul/2021 11:21:41,531- VentanaInicial: Medidas de Temperatura mostradas en la interfaz de usuario.
+04/jul/2021 11:21:45,426- VentanaInicial: VisualizaciÃ³n grÃ¡fica mediante Grafana en navegador de las medidas almacenadas.
+04/jul/2021 11:21:51,270- VentanaInicial: Solicitud para generar el archivo PDF con la informaciÃ³n de la ejecuciÃ³n actual.
+04/jul/2021 11:21:51,912- App: PDF con la informacion de la ejecucion generado correctamente en la carpeta: "C:\Users\mrrtr\eclipse-workspace\tfg\ficheros" .
+04/jul/2021 11:21:52,135- App: Analizador de temperatura "durmiendo"
+04/jul/2021 11:21:52,151- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+04/jul/2021 11:21:52,151- App: Fechas de cada medida en formato double para el anÃ¡lisis mediante la regresiÃ³n lineal.
+04/jul/2021 11:21:52,153- App: Error al conectar con la base de datos.

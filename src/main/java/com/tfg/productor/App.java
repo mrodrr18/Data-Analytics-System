@@ -165,6 +165,7 @@ public class App
     	}else {
     		if(analizadorTemp.getvI()==null) { //Solo inicia la primera vez que se da a iniciar análisis
 				analizadorTemp.setvI(vI);
+				analizadorTemp.setEjecucion(ejecucion);
 				analizadorTemp.start();
     		}
 			System.out.println("Iniciado Analizador de los datos de Temperatura, a continuación se comprobará si hay datos nuevos del sensor.");
