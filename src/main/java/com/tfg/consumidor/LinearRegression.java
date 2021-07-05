@@ -38,9 +38,10 @@ public class LinearRegression {
         if (tiempos.size() != y.size()) {
             logger.error("Longitud de la lista de tiempos y de medidas distinta.");
             throw new IllegalArgumentException("array lengths are not equal");
+        
         }
         int n = tiempos.size();
-
+        //System.out.println(n);
         // first pass
         double sumx = 0.0, sumy = 0.0, sumx2 = 0.0;
         for (int i = 0; i < n; i++) {

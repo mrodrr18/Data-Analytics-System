@@ -44,20 +44,25 @@ import com.tfg.ventanas.VentanaInicial;
 public class App 
 {
 	final static String DATABASE ="Temperaturas";
-	 static Query query;
-	 static QueryResult queryResult;
-	 static InfluxDB influxDB;
-	 final static Scanner sc = new Scanner(System.in);
-	 public boolean salir = true;	 
-	 private static VentanaInicial vI;
-	 private Date ultimaFecha;
-	 private ArrayList <Analizador> listaAnalizadores;
-	 private static Logger logger = LogManager.getLogger(App.class);
-	 public StringBuilder ejecucion = new StringBuilder();
+	final static Scanner sc = new Scanner(System.in);
+	final String serverURL = "http://localhost:8086", username = "root", password = "root";
+	
+	static Query query;
+	static QueryResult queryResult;
+	static InfluxDB influxDB;
+	
+	public boolean salir = true;
+	public StringBuilder ejecucion = new StringBuilder();
+	
+	private static VentanaInicial vI;
+	private Date ultimaFecha;
+	private ArrayList <Analizador> listaAnalizadores;
+	private static Logger logger = LogManager.getLogger(App.class);
 	 
-	    public static void main( String[] args ) throws InterruptedException {
+	
+	public static void main( String[] args )  {
 	    	
-			logger.info("Inicio del sistema");
+		logger.info("Inicio del sistema");
 			
     	SwingUtilities.invokeLater(new Runnable(){
 			public void run(){
@@ -66,48 +71,42 @@ public class App
 					vI.setVisible(true);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-				}
-	        	
+				}  	
 	        	
 			}
     	});
-        	
-        	
+                	
     }
-    public void iniciar(int tipo) {
+    public void iniciar(int tipo) {    	
+    	influxDB = InfluxDBFactory.connect(serverURL, username, password);
     	
-        	final String serverURL = "http://localhost:8086", username = "root", password = "root";
-        	influxDB = InfluxDBFactory.connect(serverURL, username, password);
-        	Pong response = null;
-        	try {
-        		response = influxDB.ping();
-        		System.out.println("Conexión con la base de datos realizada correctamente");
-        		vI.areaTexto.append("Conexión con la base de datos realizada correctamente.\n");
-        		ejecucion.append("Conexión con la base de datos realizada correctamente.\n");
-        		logger.info("Conexión con la base de datos realizada correctamente.");
-        		iniciarAnalizador(tipo);
-        	}catch(Exception e) {
-        		 System.err.println("Error al conectar con la base de datos.");
-        		 vI.areaTexto.append("Error al conectar con la base de datos.\n");
-        		 ejecucion.append("Error al conectar con la base de datos.\n");
-        		 logger.error("Error al conectar con la base de datos.", e.getCause());
-        		 iniciar(tipo);
-        		 
-        	}
+    	try {
+    		influxDB.ping();
+    		System.out.println("Conexión con la base de datos realizada correctamente");
+    		vI.areaTexto.append("Conexión con la base de datos realizada correctamente.\n");
+    		ejecucion.append("Conexión con la base de datos realizada correctamente.\n");
+    		logger.info("Conexión con la base de datos realizada correctamente.");
+    		iniciarAnalizador(tipo);
+    	}catch(Exception e) {
+    		 System.err.println("Error al conectar con la base de datos.");
+    		 vI.areaTexto.append("Error al conectar con la base de datos.\n");
+    		 ejecucion.append("Error al conectar con la base de datos.\n");
+    		 logger.error("Error al conectar con la base de datos.", e.getCause());
+    		 iniciar(tipo);
+    		 
+    	}
 	}
     
-    public  ArrayList<Analizador> listaAnalizadores() throws InterruptedException {
+    public  ArrayList<Analizador> listaAnalizadores() {
 	    	
-        	salir =false;
-        	
+        	salir =true;        	
         	listaAnalizadores = new ArrayList <Analizador>();
         	
         	//Aqui instancio los hilos de proceso de cada tipo de Analizador
         	ArrayList <Double> fechas = new ArrayList <Double>();
         	ArrayList <Double> datosTemperatura = new ArrayList <Double>();
         	AnalizadorTermico analizadorTemp = new AnalizadorTermico(0, datosTemperatura, fechas, ultimaFecha );
-        	
-        	
+        	        	
         	listaAnalizadores.add(analizadorTemp);
         	logger.info("Añadido Analizador de temperatura a la lista de Analizadores.");
         	
@@ -116,20 +115,26 @@ public class App
         	
     }
     
-    private void iniciarAnalizador(int tipo) throws InterruptedException {
+    public boolean iniciarAnalizador(int tipo){
     	if(tipo==0) {
-    		logger.info("Iniciando análisis de la temperatura");
+    		logger.info("Iniciando búsqueda del analizador de temperatura");
     		AnalizadorTermico analizadorTemp = null;
     		for(int i=0; i<listaAnalizadores.size(); i++) {
     			if(listaAnalizadores.get(i).getTipo() == tipo && tipo==0) {
     				analizadorTemp =(AnalizadorTermico) listaAnalizadores.get(i);
     				analizarTemperatura(analizadorTemp);
+    				return true;
     			}
-    			
+    			return false;
     		}
     		
+    	}else {
+    		logger.info("Tipo incorrecto, no existe un analizador de este tipo");
+    		return false;
     	}
+		return false;
     }
+    
     private void analizarTemperatura(AnalizadorTermico analizadorTemp){
     	List<List<Object>> listaTemperatura = null;
     	List<List<Object>> listaTemperatura2;
@@ -140,13 +145,11 @@ public class App
     	
     	logger.info("Sentencia SQL SELECT a la base de datos de la medida temperatura");
     	
-    		query= new Query("SELECT * FROM temperatura", DATABASE);
-    	
-    		queryResult = influxDB.query(query); 
-
+		query= new Query("SELECT * FROM temperatura", DATABASE);
+	
+		queryResult = influxDB.query(query); 
     
     	listaTemperatura = listaTemperatura2 = queryResult.getResults().get(0).getSeries().get(0).getValues();
-
 		
     	if(listaTemperatura.size()<10) {
     		System.out.println("No hay datos de temperatura almacenados suficientes. Mínimo 10. Se comprobará de nuevo en 30 segundos.");
@@ -179,120 +182,120 @@ public class App
 				fechas.add((double)calendar.getTimeInMillis());
 			}
 									
-						System.out.println("Primer Análisis Térmico.");
-						vI.areaTexto.append("Primer Análisis Térmico.\n");
-						ejecucion.append("Primer Análisis Térmico.\n");
-						logger.info("Primer Análisis Térmico.");
+			System.out.println("Primer Análisis Térmico.");
+			vI.areaTexto.append("Primer Análisis Térmico.\n");
+			ejecucion.append("Primer Análisis Térmico.\n");
+			logger.info("Primer Análisis Térmico.");
+			
+			synchronized(analizadorTemp) {
+				 analizadorTemp.despierta=true;
+				 logger.info("Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.");        						 
+				 analizadorTemp.notify(); //Datos nuevos
+			 }
+    	}
+						
+
+    	while(!salir) {
+    			
+			boolean nuevosDatos = false;
+			int pos = listaTemperatura.size()-10; //ULTIMOS X DATOS de la lista de temperatura anterior
+			int contador=listaTemperatura2.size()-10;
+			ultimaFecha = null;
+			datosTemperatura.clear();
+			fechas.clear();
+			logger.info("Fechas de cada medida en formato double para el análisis mediante la regresión lineal.");
+			for(int i=pos; i< listaTemperatura2.size(); i++) {
+				datosTemperatura.add((Double) listaTemperatura2.get(i).get(1));
+				calendar = javax.xml.bind.DatatypeConverter.parseDateTime(listaTemperatura.get(i).get(0).toString());
+				analizadorTemp.setUltimaFecha(calendar.getTime());
+				fechas.add((double)calendar.getTimeInMillis());
+			}
+			
+			
+			for(int i=pos; i< listaTemperatura.size(); i++) { //Comprueba ultimos pos datos de la tabla temperatura    					
+					if(!(listaTemperatura.get(i).get(0).equals(listaTemperatura2.get(contador).get(0)))) { 
+						//Si alguno no coincide con la lista anterior despierta al analizador
+						nuevosDatos = true;
+						
+						System.out.println("Hay datos nuevos del sensor. Comienza el Análisis Térmico.");
+						vI.areaTexto.append("Hay datos nuevos del sensor. Comienza el Análisis Térmico.\n");
+						ejecucion.append("Hay datos nuevos del sensor. Comienza el Análisis Térmico.\n");
+						logger.info("Hay datos nuevos del sensor. Comienza el Análisis Térmico.");
 						
 						synchronized(analizadorTemp) {
     						 analizadorTemp.despierta=true;
      						 logger.info("Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.");        						 
     						 analizadorTemp.notify(); //Datos nuevos
 						 }
-    	}
 						
-
-    	while(!salir) {
-    			
-    			boolean nuevosDatos = false;
-    			int pos = listaTemperatura.size()-10; //ULTIMOS X DATOS de la lista de temperatura anterior
-    			int contador=listaTemperatura2.size()-10;
-    			ultimaFecha = null;
-    			datosTemperatura.clear();
-    			fechas.clear();
-    			logger.info("Fechas de cada medida en formato double para el análisis mediante la regresión lineal.");
-    			for(int i=pos; i< listaTemperatura2.size(); i++) {
-    				datosTemperatura.add((Double) listaTemperatura2.get(i).get(1));
-    				calendar = javax.xml.bind.DatatypeConverter.parseDateTime(listaTemperatura.get(i).get(0).toString());
-    				analizadorTemp.setUltimaFecha(calendar.getTime());
-    				fechas.add((double)calendar.getTimeInMillis());
-    			}
-    			
-    			
-    			for(int i=pos; i< listaTemperatura.size(); i++) { //Comprueba ultimos pos datos de la tabla temperatura    					
-    					if(!(listaTemperatura.get(i).get(0).equals(listaTemperatura2.get(contador).get(0)))) { 
-    						//Si alguno no coincide con la lista anterior despierta al analizador
-    						nuevosDatos = true;
-    						
-    						System.out.println("Hay datos nuevos del sensor. Comienza el Análisis Térmico.");
-    						vI.areaTexto.append("Hay datos nuevos del sensor. Comienza el Análisis Térmico.\n");
-    						ejecucion.append("Hay datos nuevos del sensor. Comienza el Análisis Térmico.\n");
-    						logger.info("Hay datos nuevos del sensor. Comienza el Análisis Térmico.");
-    						
-    						synchronized(analizadorTemp) {
-        						 analizadorTemp.despierta=true;
-         						 logger.info("Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.");        						 
-        						 analizadorTemp.notify(); //Datos nuevos
-    						 }
-    						
-    						break;
-    					}
-    					contador++; //Aumenta el contador para comprobar otra prosicion
-    				
-    			}
-    			
-    			if(nuevosDatos==false) {
-    				System.out.println("No hay nuevos datos de temperatura en la base de datos.");
-					vI.areaTexto.append("No hay nuevos datos de temperatura en la base de datos.\n");
-					ejecucion.append("No hay nuevos datos de temperatura en la base de datos.\n");
-					logger.info("No hay nuevos datos de temperatura en la base de datos.");
-    			}
-    			
-    			nuevosDatos=false;
-    			try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-    			System.out.println("Espere 15 segundos.");
-				vI.areaTexto.append("Espere 15 segundos.\n");
-				ejecucion.append("Espere 15 segundos.\n");
-				logger.info("Espera de 15 segundos");
-				
-				for(int i=0; i<15; i++) {
-					if(salir!=true) {
-						try {
-							Thread.sleep(1000);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}else {
 						break;
 					}
-				}
-    			
-				analizadorTemp.despierta=false;
-				logger.info("Analizador de temperatura \"durmiendo\"");
-				listaTemperatura = listaTemperatura2; //Renueva la lista antigua con los datos nuevos
+					contador++; //Aumenta el contador para comprobar otra prosicion
 				
-    			queryResult = influxDB.query(query);  //Coge datos de la base de datos 
-    			logger.info("Nueva solicitud de datos para comprobar si hay datos nuevos.");
-    			listaTemperatura2 = queryResult.getResults().get(0).getSeries().get(0).getValues();
-    			 
+			}
 			
+			if(nuevosDatos==false) {
+				System.out.println("No hay nuevos datos de temperatura en la base de datos.");
+				vI.areaTexto.append("No hay nuevos datos de temperatura en la base de datos.\n");
+				ejecucion.append("No hay nuevos datos de temperatura en la base de datos.\n");
+				logger.info("No hay nuevos datos de temperatura en la base de datos.");
+			}
+			
+			nuevosDatos=false;
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			System.out.println("Espere 15 segundos.");
+			vI.areaTexto.append("Espere 15 segundos.\n");
+			ejecucion.append("Espere 15 segundos.\n");
+			logger.info("Espera de 15 segundos");
+			
+			for(int i=0; i<15; i++) {
+				if(salir!=true) {
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}else {
+					break;
+				}
+			}
+			
+			analizadorTemp.despierta=false;
+			logger.info("Analizador de temperatura \"durmiendo\"");
+			listaTemperatura = listaTemperatura2; //Renueva la lista antigua con los datos nuevos
+			
+			queryResult = influxDB.query(query);  //Coge datos de la base de datos 
+			logger.info("Nueva solicitud de datos para comprobar si hay datos nuevos.");
+			listaTemperatura2 = queryResult.getResults().get(0).getSeries().get(0).getValues();
+			 
+		
     	}
     }
     
-    public void pararAnalizador() {
-    	//PONER VARIABLE TIPO PARA IMPRIMIR SI ES TIPO 0 QUE ES EL DE TEMPERATURA
+    public boolean pararAnalizador() {
     	if(salir==false) {
 	    	setSalir(true);
 	    	System.out.println("Análisis de Temperatura finalizado");
 			vI.areaTexto.append("Análisis de Temperatura finalizado.\n");
 			ejecucion.append("Análisis de Temperatura finalizado.\n");
 			logger.info("Análisis de Temperatura finalizado.");
+			return true;
     	}else {
     		System.out.println("Primero debe iniciar el analizador de temperatura");
 			vI.areaTexto.append("Primero debe iniciar el analizador de temperatura.\n");
 			ejecucion.append("Primero debe iniciar el analizador de temperatura.\n");
 			logger.warn("Primero debe iniciar el analizador de temperatura.");
+			return false;
     	}
     }
     
     public StringBuilder imprimeListaTemperaturas(){
-    	final String serverURL = "http://localhost:8086", username = "root", password = "root";
     	List<List<Object>> listaTemperatura;
     	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSS'Z'" , Locale.FRANCE);
     	influxDB = InfluxDBFactory.connect(serverURL, username, password);
@@ -365,6 +368,20 @@ public class App
         logger.info("PDF con la informacion de la ejecucion generado correctamente en la carpeta: \"C:\\Users\\mrrtr\\eclipse-workspace\\tfg\\ficheros\" .");
     	
     }
+    /**
+   	 * @return the serverURL
+   	 */
+   	public String getServerURL() {
+   		return serverURL;
+   	}
+	
+	/**
+   	 * @return the password
+   	 */
+   	public String getPassword() {
+   		return password;
+   	}
+   	
 	/**
 	 * @return the salir
 	 */

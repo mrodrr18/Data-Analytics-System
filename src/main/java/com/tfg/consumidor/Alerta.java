@@ -24,7 +24,7 @@ public class Alerta	 {
           props.put("mail.smtp.port", "465");
     }
 
-    public static void send(String nombre_analizador, double temperatura){  
+    public boolean send(String nombre_analizador, double temperatura){  
           //get Session   
     	final String from = "mrrtrece2@gmail.com";
     	final String password = "Trece.13";
@@ -50,7 +50,8 @@ public class Alerta	 {
            //send message  
            Transport.send(message); 
            logger.info("Correo electrónico enviado correctamente.");
-           System.out.println("Mensaje ENVIADO");    
+           System.out.println("Mensaje ENVIADO");
+           return true;
           } catch (MessagingException e) {
         	  logger.error("Error al enviar el correo electrónico.");
         	  throw new RuntimeException(e);

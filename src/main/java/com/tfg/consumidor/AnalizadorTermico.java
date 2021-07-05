@@ -7,7 +7,6 @@ import java.util.Date;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import com.tfg.productor.App;
 import com.tfg.ventanas.VentanaInicial;
 
 public class AnalizadorTermico extends Analizador {
@@ -35,9 +34,9 @@ public class AnalizadorTermico extends Analizador {
 	}
 	
 	@Override
-	public void configurarUmbrales() {
+	public float configurarUmbrales() {
 		// TODO Auto-generated method stub
-		
+
 		this.umbral_Temperatura = 30;
 		System.out.println("Umbral de temperatura configurado en "+ this.umbral_Temperatura+ " ºC.");
 		if(vI !=null) {
@@ -45,7 +44,7 @@ public class AnalizadorTermico extends Analizador {
 			ejecucion.append("Umbral de temperatura configurado en "+ this.umbral_Temperatura+ " ºC.\n");
 		}
 		logger.info("Umbral de temperatura configurado en "+ this.umbral_Temperatura+ " ºC.");
-
+		return this.umbral_Temperatura;
 	}
 
 	@Override
@@ -68,49 +67,7 @@ public class AnalizadorTermico extends Analizador {
 	}
 	
 	
-	private void analisis_Media() {
-		double suma = 0;
-		
-		for(int i=0; i<this.nuevosDatos.size(); i++) {
-			suma+= Double.valueOf(this.nuevosDatos.get(i));
-		}
-		
-		
-		double media=suma/Double.valueOf(this.nuevosDatos.size());
-		
-		if(media > this.umbral_Temperatura) {
-			System.out.println("Generamos alerta, la media supera el umbral: "+media);
-		}else {
-			System.out.println("El análisis de la media no ha superado el umbral de temperatura. Temperatura media: "+ media);
-		}
-		
-	}
-	
-	private void analisis_Valores_Consecutivos() {
-		for(int i=0; i<(this.nuevosDatos.size()-4); i++) {
-			
-			//Contador de valores consecutivos superiores al umbral 
-			int contador = 0;
-			
-			//Recorremos cada 5 elementos consecutivos
-			for(int j=0; j<5; j++) {
-				
-				//Comprobamos si supera el umbral de temperatura
-				if(this.nuevosDatos.get(i+j) > this.umbral_Temperatura) {
-					contador++;
-				}
-			}
-			
-			//5 valores consecutivos por encima del umbral, generamos alerta
-			if(contador==5) {
-				System.out.println("Generamos alerta, 5 datos consecutivos superiores a la temperatura umbral");
-				i= this.nuevosDatos.size();
-			}
-		}
-	}
-	
-	//Tambien es boolean
-	private void analisis_Regresion_Lineal() {
+	public boolean analisis_Regresion_Lineal() {
 		// TODO Auto-generated method stub
 		
 		LinearRegression linear = new LinearRegression (this.tiempos, this.nuevosDatos );
@@ -141,23 +98,26 @@ public class AnalizadorTermico extends Analizador {
 			ejecucion.append("La predicción de temperatura dentro de 30 minutos será de "+ resultado + " según el análisis de regresión lineal.\n");
 			logger.info("El resultado de la predicción: "+resultado+", supera el umbral "+this.umbral_Temperatura+"ºC. Se genera una alerta por correo electrónico.");
 			generarAlerta(resultado);
-		}else {
+			
+			return true;
+			}else {
+		
 			System.out.println("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC");
 			vI.areaTexto.append("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC.\n");
 			ejecucion.append("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC.\n");
 			logger.info("La predicción de temperatura no ha superado el umbral "+this.umbral_Temperatura +"ºC.\n");
 			
+			return false;
 		}
 	}
 	
-	//Si ha ido bien email.send devuelve true, si no false. 
-	private void generarAlerta(double resultado) {
+	public boolean generarAlerta(double resultado) {
 		System.out.println("La predicción de temperatura supera el umbral, se generará una alerta por correo electrónico.");
 		vI.areaTexto.append("La predicción de temperatura supera el umbral, se generará una alerta por correo electrónico.\n");
 		ejecucion.append("La predicción de temperatura supera el umbral, se generará una alerta por correo electrónico.\n");
 		logger.info("Para generar la alerta se crea un objeto Alerta y se llama al método send.");
 		Alerta email = new Alerta();
-		email.send("Analizador Térmico", resultado);
+		return email.send("Analizador Térmico", resultado);
 	}
 
 	@Override

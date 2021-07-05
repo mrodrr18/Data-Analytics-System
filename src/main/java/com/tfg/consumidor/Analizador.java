@@ -14,7 +14,7 @@ public abstract class Analizador extends Thread{
 	}
 	public abstract void realizarAnalisis();
 	
-	public abstract void configurarUmbrales();
+	public abstract float configurarUmbrales();
 	
 	private void generarAlerta() {};
 	
