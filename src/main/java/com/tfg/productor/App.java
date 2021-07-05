@@ -156,6 +156,7 @@ public class App
     		vI.areaTexto.append("No hay datos de temperatura almacenados suficientes. Mínimo 10. Se comprobará de nuevo en 30 segundos.\n");
     		ejecucion.append("No hay datos de temperatura almacenados suficientes. Mínimo 10. Se comprobará de nuevo en 30 segundos.\n");
     		logger.warn("No hay datos de temperatura almacenados suficientes. Mínimo 10. Se comprobará de nuevo en 30 segundos.");
+    		
     		try {
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {
