@@ -1,0 +1,126 @@
+05/jul/2021 18:51:39,429- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+05/jul/2021 18:51:39,441- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+05/jul/2021 18:51:39,441- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+05/jul/2021 18:51:39,441- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+05/jul/2021 18:51:39,441- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+05/jul/2021 18:51:39,441- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+05/jul/2021 18:51:39,457- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+05/jul/2021 18:51:39,457- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+05/jul/2021 18:51:39,466- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+05/jul/2021 18:51:39,568- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+05/jul/2021 18:51:39,568- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,568- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,568- App: Añadido Analizador de temperatura a la lista de Analizadores.
+05/jul/2021 18:51:39,568- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,568- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,576- App: Añadido Analizador de temperatura a la lista de Analizadores.
+05/jul/2021 18:51:39,680- App: Primero debe iniciar el analizador de temperatura.
+05/jul/2021 18:51:39,680- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+05/jul/2021 18:51:39,680- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+05/jul/2021 18:51:39,680- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+05/jul/2021 18:51:39,680- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+05/jul/2021 18:51:39,688- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+05/jul/2021 18:51:39,688- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+05/jul/2021 18:51:39,690- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+05/jul/2021 18:51:39,690- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+05/jul/2021 18:51:39,690- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+05/jul/2021 18:51:39,690- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+05/jul/2021 18:51:39,690- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,690- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,690- App: Añadido Analizador de temperatura a la lista de Analizadores.
+05/jul/2021 18:51:39,690- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,690- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,690- App: Añadido Analizador de temperatura a la lista de Analizadores.
+05/jul/2021 18:51:39,690- App: Tipo incorrecto, no existe un analizador de este tipo
+05/jul/2021 18:51:39,698- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,698- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,700- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+05/jul/2021 18:51:39,700- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+05/jul/2021 18:51:39,700- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+05/jul/2021 18:51:39,700- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+05/jul/2021 18:51:39,700- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+05/jul/2021 18:51:39,700- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+05/jul/2021 18:51:39,700- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+05/jul/2021 18:51:39,700- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+05/jul/2021 18:51:39,700- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+05/jul/2021 18:51:39,708- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+05/jul/2021 18:51:39,708- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,708- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,710- App: Añadido Analizador de temperatura a la lista de Analizadores.
+05/jul/2021 18:51:39,710- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,710- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,710- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+05/jul/2021 18:51:39,710- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+05/jul/2021 18:51:39,710- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+05/jul/2021 18:51:39,710- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+05/jul/2021 18:51:39,710- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+05/jul/2021 18:51:39,710- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+05/jul/2021 18:51:39,710- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+05/jul/2021 18:51:39,710- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+05/jul/2021 18:51:39,710- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+05/jul/2021 18:51:39,720- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+05/jul/2021 18:51:39,720- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,720- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,720- App: Añadido Analizador de temperatura a la lista de Analizadores.
+05/jul/2021 18:51:39,730- AnalizadorTermico: Análisis de la temperatura por regresión lineal iniciado.
+05/jul/2021 18:51:39,730- AnalizadorTermico: La predicción de temperatura dentro de 30 minutos será de NaN según el análisis de regresión lineal.
+05/jul/2021 18:51:39,740- AnalizadorTermico: La predicción de temperatura no ha superado el umbral 30.0ºC.
+
+05/jul/2021 18:51:39,740- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,740- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,740- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+05/jul/2021 18:51:39,740- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+05/jul/2021 18:51:39,740- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+05/jul/2021 18:51:39,748- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+05/jul/2021 18:51:39,750- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+05/jul/2021 18:51:39,750- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+05/jul/2021 18:51:39,750- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+05/jul/2021 18:51:39,750- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+05/jul/2021 18:51:39,750- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+05/jul/2021 18:51:39,750- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+05/jul/2021 18:51:39,750- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:39,750- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:39,750- App: Añadido Analizador de temperatura a la lista de Analizadores.
+05/jul/2021 18:51:39,750- AnalizadorTermico: Para generar la alerta se crea un objeto Alerta y se llama al método send.
+05/jul/2021 18:51:39,770- Alerta: email enviado a mrrtrece2@gmail.com.
+05/jul/2021 18:51:39,770- Alerta: El asunto del email enviado es: Alerta Analizador Térmico.
+05/jul/2021 18:51:39,770- Alerta: El cuerpo del email enviado es: La temperatura dentro de 30 minutos será de 20.0.
+05/jul/2021 18:51:44,104- Alerta: Correo electrónico enviado correctamente.
+05/jul/2021 18:51:57,801- App: Inicio del sistema
+05/jul/2021 18:51:58,001- VentanaInicial: Creado el panel de la ventana gráfica inicial.
+05/jul/2021 18:51:58,017- VentanaInicial: Añadido botón para acceder a Grafana en la interfaz gráfica inicial.
+05/jul/2021 18:51:58,033- VentanaInicial: Añadido botón para ver en una ventana diferente las medidas guardadas de la temperatura.
+05/jul/2021 18:51:58,033- VentanaInicial: Añadido botón para guardar en un PDF las medidas de la temepratura que hay almacenadas en la base de datos.
+05/jul/2021 18:51:58,043- VentanaInicial: Añadido botón para calcular la tendencia de las medidas de temperatura según la regresión lineal.
+05/jul/2021 18:51:58,047- VentanaInicial: Añadido botón para pausar el análisis de las medidas de temepratura.
+05/jul/2021 18:51:58,049- VentanaInicial: Añadido botón para cambiar el umbral del análisis de temeperatura.
+05/jul/2021 18:51:58,050- VentanaInicial: Añadido botón para guardar en un PDF la información de la ejecución actual.
+05/jul/2021 18:51:58,050- VentanaInicial: Añadido botón para abrir la carpeta con los ficheros generados.
+05/jul/2021 18:51:58,101- VentanaInicial: Añadida a la ventana inicial el area de texto donde se visualizará la información de la ejecución actual.
+05/jul/2021 18:51:58,101- AnalizadorTermico: Umbral de temperatura configurado en 30.0 ºC.
+05/jul/2021 18:51:58,101- AnalizadorTermico: Nuevo analizador Térmico
+05/jul/2021 18:51:58,101- App: Añadido Analizador de temperatura a la lista de Analizadores.
+05/jul/2021 18:52:00,317- VentanaInicial: Iniciando el sistema de análisis de datos.
+05/jul/2021 18:52:02,062- App: Conexión con la base de datos realizada correctamente.
+05/jul/2021 18:52:02,062- App: Iniciando búsqueda del analizador de temperatura
+05/jul/2021 18:52:02,063- App: Sentencia SQL SELECT a la base de datos de la medida temperatura
+05/jul/2021 18:52:02,110- App: Inicio del análisis de la temperatura
+05/jul/2021 18:52:02,110- AnalizadorTermico: Iniciado el hilo del analizador de inercia térmica.
+05/jul/2021 18:52:02,110- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+05/jul/2021 18:52:02,125- App: Primer Análisis Térmico.
+05/jul/2021 18:52:02,125- App: Notificación al Analizador de Temperatura para iniciar el cálculo de la tendencia.
+05/jul/2021 18:52:02,125- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+05/jul/2021 18:52:02,125- AnalizadorTermico: Analizador Térmico recibe notificación de nuevos datos.
+05/jul/2021 18:52:02,125- AnalizadorTermico: Análisis de la tendencia de la temperatura mediante la regresión lineal.
+05/jul/2021 18:52:02,141- App: No hay nuevos datos de temperatura en la base de datos.
+05/jul/2021 18:52:02,141- AnalizadorTermico: Análisis de la temperatura por regresión lineal iniciado.
+05/jul/2021 18:52:02,141- AnalizadorTermico: La predicción de temperatura dentro de 30 minutos será de 23.29776425252203 según el análisis de regresión lineal.
+05/jul/2021 18:52:02,141- AnalizadorTermico: La predicción de temperatura no ha superado el umbral 30.0ºC.
+
+05/jul/2021 18:52:02,141- AnalizadorTermico: Análisis finalizado. Espere 15 segundos para comprobar si hay nuevos datos del sensor.
+05/jul/2021 18:52:04,147- App: Espera de 15 segundos
+05/jul/2021 18:52:17,156- AnalizadorTermico: Analizador Térmico esperando a que haya nuevos datos.
+05/jul/2021 18:52:19,209- App: Analizador de temperatura "durmiendo"
+05/jul/2021 18:52:19,222- App: Nueva solicitud de datos para comprobar si hay datos nuevos.
+05/jul/2021 18:52:19,222- App: Fechas de cada medida en formato double para el análisis mediante la regresión lineal.
+05/jul/2021 18:52:19,222- App: No hay nuevos datos de temperatura en la base de datos.
