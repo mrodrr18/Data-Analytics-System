@@ -27,7 +27,7 @@ public class Alerta	 {
     public boolean send(String nombre_analizador, double temperatura){  
           //get Session   
     	final String from = "mrrtrece2@gmail.com";
-    	final String password = "Trece.13";
+    	final String password = "xxxxxx";
     	String to="mrrtrece2@gmail.com";
     	logger.info("email enviado a "+to+".");
     	String sub ="Alerta " + nombre_analizador;
